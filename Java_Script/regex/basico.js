@@ -17,4 +17,26 @@ let re5 = /(\d{1,2})[-|/](\d{1,2})[-|/](\d{4})/;
 let re6 = /["aeiou"]/;//este caso determina si existe una vocal, en caso contrario [aeiou] lo determina como cadena completa
 console.log(re6.test("lynx"));
 
+//Reemplaza todas las vocales en la palabra correcaminos
+let mensaje = "perro";
+let newMensaje = mensaje.replace(/[aeiou]/g,"+");
+console.log(newMensaje);
+/* el $ sirve para cambiar el ultimo lugar 
+el g es para cambiar en toda la cadena, y ^ significa negación
 
+las llaves {} significa longitud
+*/
+
+let mensaje2 = "el 20 de enero de 2019 se dio inicio a la 3 semana";
+let newMensaje2 = mensaje2.replace(/[a-z]{5,}/g, "");
+console.log(newMensaje2);
+
+
+var historia = "De forma similar que los corchetes, los paréntesis \
+sirven para agrupar caracteres, sin embargo existen varias diferencias\
+fundamentales entre los grupos establecidos por medio de corchetes y los \
+grupos establecidos por paréntesis ";
+var expresion = /[A-Z][a-z]+/g
+///[A-Z][^aeiou][a-z]+/g
+result = historia.match(expresion);
+console.log (result);
